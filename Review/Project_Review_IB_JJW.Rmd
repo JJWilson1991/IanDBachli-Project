@@ -1,0 +1,179 @@
+# Overview
+
+## Title of project:
+
+*An Analysis of Climate Conditions surrounding Dengue Outbreaks in Colombo, Sri Lanka*
+
+## Author of project:
+
+*Ian Bachli*
+
+
+# Specific project content evaluation
+
+## Background, Context and Motivation
+
+### Feedback and Comments
+The background is fairly detailed and provides a nice back drop of why dengue is an issue. There were a couple of contradictory statements about the percentage of global population at risk which I have highlighted in the markdown. 
+
+It would be nice to provide a paragraph at the end of the introduction to really highlight how the analysis being undertaken could be useful to provide a more clear demosntration of the motivation for the work. I've also added some paragraphing to the introduction to help it read a little better.
+
+There are no references in the introduction and background, which obviously needs to be rectified.
+
+### Summary assessment
+
+* some contextualization and motivation
+
+
+## Question description
+
+### Feedback and Comments
+The questions are reasonably clear, with the aim to generally use climatic conditions to look for relationships with numbers of dengue cases and whether these can be used to make predictions. These aims match the data provided quite well.
+
+Re-ordering of the hypotheses into a more logical order would help tie them
+together into themes. For instance; having the broad question of analysing climatic conditions in relation to Dengue cases, then follwoing this with more specific questions you wish to answer like whether increased precipitation leads to more cases. 
+
+### Summary assessment
+
+* question/hypotheses somewhat explained
+
+
+## Data description
+
+### Feedback and Comments
+
+The data is clearly described as to What format is in, what it contains and its source. Perhaps a brief statement on how the data was collected would be nice to include, if it known. Inclusion of a codebook with more detailed desciption of the data and variables would be useful.
+
+### Summary assessment
+
+* source and overall structure of data well explained
+
+
+## Data wrangling and exploratory analysis
+
+### Feedback and Comments
+
+The raw data is already very clean so only very minor processing was needed, with just the creation of a new column to number all the weeks over the entire time period. The one suggestion i might make is perhaps rounding some of the data, as a lot of the observations are recorded to 4 decimal places and some to 1 decimal place, 4 seems a bit excessive to me.
+
+I think the use of violin plots for exploring the data isn't really approriate, these are better used for analysing data distribution within specific categories. eg. if you had the number of cases on your y axis andspecific regions on the x axis as a categorical variable so each region would have its own violin plot. To just quickly analyse what sort of results were most common in each variable then something like a histogram would probably show this better. Then to look at the relationship between each variable and the number of caxses as the outcome in the bivariate anaysis.
+
+Otherwise i think all of the variables have been explored to some degree. Inclusion of the surplus exploratory analysis visuals in a supplementary materials file would be nice for completeness.
+
+### Summary assessment
+
+* some weaknesses in wrangling and exploratory component
+
+
+## Appropriateness of Analysis
+
+### Feedback and Comments
+
+In the continuous outcome markdown, a decent job is made of constructing and testing some models. The data is preprocessed and zero variance variables removed from later models. A rnage of different models are tested using, lm, earth and knn methods. 
+I get an error message when trying to run fitearth2: 
+
+Error in leaps.setup(x = bx, y = y, force.in = 1, force.out = NULL, intercept = FALSE,  : 
+  NA/NaN/Inf in foreign function call 
+  
+  Some more work on evaluating model performance would be benficial to decide if the chosen model in this case is actually useful for making predictions of Dengue cases and whether this model is substantially better than the others. At this stage no analysis has been included in the final manuscript so this is a work in progress. 
+
+### Summary assessment
+* wrong/inadequate analysis
+
+
+## Presentation
+
+### Feedback and Comments
+As mentioned above, I don't think the use of violin plots is the most appropriate visualisation in this case. Otherise the reuslts presented look Ok, although the scatterplots could do with more informative axes labels in some cases. 
+
+### Summary assessment
+
+* results are presented ok, with room for improvement
+
+
+## Discussion/Conclusions
+
+### Feedback and Comments
+
+The discussion needs a lot of work to actually refer to some of results from the analysis and try to relate that to other finsings in the literature to build up a strong picture of whether the findings are significant. 
+
+The limitations section makes quite a good job of alluding to the lack of information about what intervention strategies are being used in the area and how these may be influencing the number of cases in addition to the climatic conditions. Perhaps some more discussion of other factors that may play a part, such as greater climatic trends like  climate change would add another layer to the depth of discussion.
+
+### Summary assessment
+* major parts of discussion missing or wrong 
+
+
+## Further comments
+
+The project manuscript is incomplete at this stage so i can only comment on what is present. 
+
+I think it has potentially to be a nice project. the introduction can be leveraged to really highlight the relevance of the study and provide strong motivation which will really engage the reader. Highlight the gaps you are trying to address with the study, this will help lead the reader through the rest of the article as they can see where the different parts fit in. the exploratory analysis is quite thorough, although some more approriate figures would help.
+
+
+
+# Overall project content evaluation
+
+## Structure
+
+### Feedback and Comments
+
+The project seems reasonably well structured with things in their appropriate files, bar 1 or 2 results figures in the main repo folder. Everything seems to have an approproiate name and its easy to tell how the project fits together.
+
+
+### Summary assessment
+
+* well structured
+
+
+## Documentation 
+
+### Feedback and Comments
+
+Documentation is very thorough in each of the markdown files for each part of the project. It is easy to foll0w the thought process and what is being doen with the data at each stage. It is always possible to add more comments to the code, but i think it is commented well enough to follow as is.
+
+### Summary assessment
+
+* fully and well documented
+
+
+## Reproducibility
+
+### Feedback and Comments
+The readme document could do with updating to provide more compelte instructions on reproducing the project.
+
+In the continuous outcome analysis fitearth2 did not work: Error in leaps.setup(x = bx, y = y, force.in = 1, force.out = NULL, intercept = FALSE,  : 
+  NA/NaN/Inf in foreign function call 
+  
+  There is a problem with knitting figure 17 :[WARNING] Could not fetch resource '../../results/Humid_v_Precip.png': PandocResourceNotFound "../../results/Humid_v_Precip.png"
+
+I am unable to knit with the bibliography, i believe there is a special character in one of the references which is preventing it being read, :Error reading bibliography .\../Bibtex_References.bib (line 17, column 1):
+unexpected "@"
+
+When I remove the bibliography the manuscript knits fine. I believe if you edit your bibliography to remove the special character then it should work OK.
+Other than  these 3 points the project seems to reproduce fine.
+
+### Summary assessment
+
+* small parts not reproducible or required manual intervention 
+
+
+## Thoroughness
+
+### Feedback and Comments
+
+A number of different models have been looked at in the analysis markdown; lm, earth, knn. More could be done here to analyse the best performing model i feel. There is also no in depth analysis/modeling section in the manuscript which i assume is to follow. The discussion is quite vague at this point and could do with more referencing of other work, which may support any conclusions drawn. 
+
+Overall i feel there is room for improvement in terms of thoroughness and to attempt to answer all of the questions raised in the hypothesis section. for instance the hypotheses ask what additional variables may be useful in future data collection, perhaps discussing some suggestions with reference to the literature may be an interesting discussion point.
+
+### Summary assessment
+
+* decent level of thoroughness
+
+
+## Further comments
+
+The project does not have all sections completed, so I can't fully comment on those, but I think it has potential if the in depth analysis can be used to draw some conclusions and these can be supported by some references from the literature. The presentation of the results also needs work, as I feel there are probably better ways to illustrate the exploratory analysis as I mentioned above.
+
+
+
+
+
